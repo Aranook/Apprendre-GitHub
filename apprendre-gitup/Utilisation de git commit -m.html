@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilisation de git commit -m "premier commit"</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav > ul > li {
+            display: inline-block;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 3px;
+        }
+        nav a.active {
+            background-color: #555;
+            color: white;
+            border-radius: 3px;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            border-radius: 3px;
+            padding: 5px 0;
+            z-index: 1000;
+        }
+        nav ul ul li {
+            display: block;
+        }
+        nav ul ul a {
+            padding: 8px 15px;
+            width: 200px;
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
+        .content {
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 5px solid #007BFF;
+            overflow-x: auto;
+        }
+        code {
+            color: #007BFF;
+        }
+        ul, ol {
+            margin: 10px 0 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html" class="active">Apprendre GitHub</a></li>
+            <li><a href="#">Catégories</a>
+                <ul>
+                    <li><a href="Créer un nouveau dépôt GitHub.html">Créer un Nouveau Dépôt</a></li>
+                    <li><a href="Supprimer un dépôt GitHub via l'Invite de Commandes.html">Supprimer un Dépôt</a></li>
+                    <li><a href="Procédure de synchronisation avec GitHub sous Windows.html">Synchronisation avec GitHub</a></li>
+                    <li><a href="Cloner un Dépôt GitHub vers local sous Windows.html">Cloner un Dépôt GitHub vers local</a></li>
+                    <li><a href="Utilisation de git pull origin.html">Utilisation de git pull origin</a></li>
+					<li><a href="Utilisation de git commit -m.html">Utilisation de git commit -m</a></li>
+					<li><a href="Créer un commit via l'Invite de Commandes.html">Créer un Commit</a></li>
+                    <li><a href="Différence entre CMD et Bash.html">Différence entre CMD et Bash</a></li>
+                    <li><a href="Résolution de Conflits Git.html">Résolution de conflits</a></li>
+                </ul>
+            </li>
+            <li><a href="À propos.html">À propos</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h1>Utilisation de <code>git commit -m "premier commit"</code></h1>
+
+        <ul>
+            <li><strong>Auteur : ACOMDIR </strong><a href="https://www.facebook.com/acomdir/" target="_blank">https://www.facebook.com/acomdir/</a>.</li>
+        </ul>
+
+        <h2>Introduction à <code>git commit</code></h2>
+        <p>La commande <code>git commit</code> est utilisée pour enregistrer les modifications dans l'historique du dépôt Git local. Chaque commit représente une version du projet à un instant donné, avec un message descriptif pour documenter les modifications.</p>
+
+        <h2>Étape 1 : Ajouter des fichiers au suivi Git</h2>
+        <p>Avant de créer un commit, vous devez ajouter les fichiers que vous souhaitez inclure dans ce commit. Utilisez la commande suivante pour ajouter tous les fichiers modifiés ou créés :</p>
+        <pre><code>git add .</code></pre>
+        <p>Pour ajouter un fichier spécifique, utilisez :</p>
+        <pre><code>git add nom_du_fichier</code></pre>
+
+        <h2>Étape 2 : Créer un Commit</h2>
+        <p>Une fois les fichiers ajoutés, vous pouvez créer un commit en utilisant la commande suivante :</p>
+        <pre><code>git commit -m "premier commit"</code></pre>
+
+        <h3>Explication de la commande :</h3>
+        <ul>
+            <li><strong>git commit</strong> : Indique que vous souhaitez enregistrer un ensemble de modifications.</li>
+            <li><strong>-m</strong> : Spécifie que vous voulez inclure un message de commit directement dans la commande.</li>
+            <li><strong>"premier commit"</strong> : Le message de commit. Il doit être descriptif et expliquer ce que vous avez fait dans ce commit.</li>
+        </ul>
+
+        <h2>Étape 3 : Vérifier les Commits</h2>
+        <p>Pour vérifier que votre commit a bien été créé, utilisez la commande suivante :</p>
+        <pre><code>git log</code></pre>
+        <p>Cette commande affiche l'historique des commits. Vous devriez voir votre message de commit "premier commit" dans la liste.</p>
+
+        <h2>Exemples de Messages de Commit</h2>
+        <p>Voici quelques exemples de messages de commit clairs et concis :</p>
+        <ul>
+            <li><code>git commit -m "Ajout du fichier README.md avec la description du projet"</code></li>
+            <li><code>git commit -m "Correction d'un bug dans la fonction calculTotal()"</code></li>
+            <li><code>git commit -m "Mise à jour du fichier .gitignore pour inclure les logs"</code></li>
+        </ul>
+
+        <h2>Bonnes Pratiques pour les Messages de Commit</h2>
+        <ul>
+            <li>Utilisez un message court mais descriptif.</li>
+            <li>Expliquez <strong>pourquoi</strong> une modification a été effectuée, pas seulement <strong>ce qui</strong> a été modifié.</li>
+            <li>Évitez les messages vagues comme <code>"modifications"</code> ou <code>"update"</code>.</li>
+        </ul>
+
+        <h2>Conseils Supplémentaires</h2>
+        <ul>
+            <li>Pour modifier le dernier message de commit, utilisez : <pre><code>git commit --amend -m "Nouveau message"</code></pre></li>
+            <li>Si vous oubliez d'ajouter un fichier, vous pouvez l'ajouter et mettre à jour le commit avec <code>--amend</code>.</li>
+        </ul>
+    </div>
+</body>
+</html>
