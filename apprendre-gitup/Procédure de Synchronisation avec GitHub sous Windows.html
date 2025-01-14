@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procédure de Synchronisation avec GitHub sous Windows</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+		
+		nav {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav > ul > li {
+            display: inline-block;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 3px;
+        }
+        nav a.active {
+            background-color: #555;
+            color: white;
+            border-radius: 3px;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            border-radius: 3px;
+            padding: 5px 0;
+            z-index: 1000;
+        }
+        nav ul ul li {
+            display: block;
+        }
+        nav ul ul a {
+            padding: 8px 15px;
+            width: 200px;
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
+		
+        h1, h2 {
+            color: #333;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+	
+	<nav>
+        <ul>
+            <li><a href="../index.html" class="active">Apprendre GitHub</a></li>
+            <li><a href="#">Catégories</a>
+                <ul>
+					<li><a href="Créer un nouveau dépôt GitHub.html">Créer un Nouveau Dépôt</a></li>
+					<li><a href="Supprimer un dépôt GitHub via l'Invite de Commandes.html">Supprimer un Dépôt</a></li>
+                    <li><a href="Procédure de synchronisation avec GitHub sous Windows.html">Synchronisation avec GitHub</a></li>
+					<li><a href="Cloner un Dépôt GitHub vers local sous Windows.html">Cloner un Dépôt GitHub vers local</a></li>
+					<li><a href="Créer un commit via l'Invite de Commandes.html">Créer un Commit</a></li>
+                    <li><a href="Différence entre CMD et Bash.html">Différence entre CMD et Bash</a></li>
+                    <li><a href="Résolution de Conflits Git.html">Résolution de conflits</a></li>
+                </ul>
+            </li>
+            <li><a href="À propos.html">À propos</a></li>
+        </ul>
+    </nav>
+
+    <h1>Procédure détaillée pour synchroniser un dépôt local avec un dépôt GitHub existant sous Windows</h1>
+	
+	<ul>
+            <li><strong>Auteur : ACOMDIR </strong><a href="https://www.facebook.com/acomdir/" target="_blank">https://www.facebook.com/acomdir/</a>.</li>
+	</ul>
+
+    <h2>Étape 1 : Démarrer l'IDE CMD en mode administrateur</h2>
+	
+    <ol>
+        <li>Appuyez sur la touche Windows pour ouvrir le menu démarrer.</li>
+        <li>Tapez <strong>cmd</strong> dans la barre de recherche.</li>
+        <li>Faites un clic droit sur l'option <em>Invite de commandes</em> et sélectionnez <strong>Exécuter en tant qu'administrateur</strong>.</li>
+    </ol>
+
+    <p><strong>Astuce :</strong> Vérifiez si votre version de Git est à jour en exécutant cette commande dans l'invite de commandes :</p>
+    <pre><code>git update-git-for-windows</code></pre>
+
+    <h2>Étape 2 : Accéder au répertoire de destination local</h2>
+    <p>Une fois l'invite de commandes ouverte, utilisez la commande <code>cd</code> pour naviguer vers le répertoire où vous souhaitez cloner le dépôt GitHub. Par exemple :</p>
+    <pre><code>cd C:\Users\VotreNomUtilisateur\Documents\MesProjets</code></pre>
+    <p>Remplacez <strong>VotreNomUtilisateur</strong> et <strong>MesProjets</strong> par les noms correspondants sur votre machine.</p>
+
+    <h2>Étape 3 : Cloner le dépôt GitHub</h2>
+    <h3>Si Git n'est pas installé :</h3>
+    <ol>
+        <li>Téléchargez Git à partir de <a href="https://git-scm.com/" target="_blank">git-scm.com</a>.</li>
+        <li>Installez Git en suivant les instructions du programme d’installation.</li>
+        <li>Vérifiez l’installation en exécutant :</li>
+    </ol>
+    <pre><code>git --version</code></pre>
+    <h3>Pour cloner le dépôt :</h3>
+    <pre><code>git clone https://github.com/Aranook/Apprendre-GitHub.git</code></pre>
+    <p>Cette commande crée un dossier local nommé <code>Python-tools</code>, contenant tous les fichiers et l'historique du dépôt distant.</p>
+
+    <h2>Étape 4 : Naviguer dans le dépôt cloné</h2>
+    <p>Une fois le dépôt cloné, entrez dans le répertoire créé :</p>
+    <pre><code>cd Python-tools</code></pre>
+
+    <h2>Étape 5 : Effectuer des modifications et synchroniser avec GitHub</h2>
+    <ol>
+        <li><strong>Ajouter des modifications au suivi Git :</strong></li>
+        <pre><code>git add .</code></pre>
+        <p>Ou pour un fichier spécifique :</p>
+        <pre><code>git add nom_du_fichier</code></pre>
+
+        <li><strong>Créer un commit :</strong></li>
+        <pre><code>git commit -m "Description de vos modifications"</code></pre>
+
+        <li><strong>Pousser les modifications vers GitHub :</strong></li>
+        <pre><code>git push origin main</code></pre>
+        <p><strong>Remarque :</strong> Remplacez <code>main</code> par le nom de votre branche si nécessaire.</p>
+    </ol>
+
+    <h2>Étape 6 : Vérifications supplémentaires</h2>
+    <p>Vérifiez l’état du dépôt local :</p>
+    <pre><code>git status</code></pre>
+    <p>Pour synchroniser avec les dernières mises à jour du dépôt distant :</p>
+    <pre><code>git pull origin main</code></pre>
+    <p>Remplacez <code>main</code> par le nom de la branche utilisée.</p>
+
+    <h2>Pourquoi remplacer <code>main</code> par un autre nom de branche ?</h2>
+    <p>Un dépôt peut contenir plusieurs branches. Voici quelques exemples de conventions :</p>
+    <ul>
+        <li><strong>main :</strong> branche principale par défaut récente.</li>
+        <li><strong>master :</strong> ancien nom par défaut.</li>
+        <li><strong>dev :</strong> utilisée pour le développement en cours.</li>
+    </ul>
+
+    <h3>Pour connaître la branche active :</h3>
+    <pre><code>git branch</code></pre>
+    <p>Affiche les branches locales avec un astérisque (*) sur la branche active.</p>
+
+    <h3>Pour afficher les branches distantes :</h3>
+    <pre><code>git branch -r</code></pre>
+
+    <h2>Gestion des branches</h2>
+    <ul>
+        <li><strong>Créer une nouvelle branche :</strong></li>
+        <pre><code>git checkout -b nom_nouvelle_branche</code></pre>
+
+        <li><strong>Pousser une nouvelle branche :</strong></li>
+        <pre><code>git push origin nom_nouvelle_branche</code></pre>
+
+        <li><strong>Changer de branche :</strong></li>
+        <pre><code>git checkout nom_branche</code></pre>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>Adaptez les commandes Git selon la structure des branches de votre dépôt pour garantir une gestion fluide et éviter les conflits.</p>
+</body>
+</html>

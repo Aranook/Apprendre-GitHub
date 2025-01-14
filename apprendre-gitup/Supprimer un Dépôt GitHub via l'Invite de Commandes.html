@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supprimer un Dépôt GitHub via l'Invite de Commandes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav > ul > li {
+            display: inline-block;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 3px;
+        }
+        nav a.active {
+            background-color: #555;
+            color: white;
+            border-radius: 3px;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            border-radius: 3px;
+            padding: 5px 0;
+            z-index: 1000;
+        }
+        nav ul ul li {
+            display: block;
+        }
+        nav ul ul a {
+            padding: 8px 15px;
+            width: 200px;
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
+        .content {
+            padding: 20px;
+        }
+		
+        h1, h2 {
+            color: #333;
+        }
+        .code-block {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html" class="active">Apprendre GitHub</a></li>
+            <li><a href="#">Catégories</a>
+                <ul>
+					<li><a href="Créer un nouveau dépôt GitHub.html">Créer un Nouveau Dépôt</a></li>
+					<li><a href="Supprimer un dépôt GitHub via l'Invite de Commandes.html">Supprimer un Dépôt</a></li>
+                    <li><a href="Procédure de synchronisation avec GitHub sous Windows.html">Synchronisation avec GitHub</a></li>
+					<li><a href="Cloner un Dépôt GitHub vers local sous Windows.html">Cloner un Dépôt GitHub vers local</a></li>
+					<li><a href="Créer un commit via l'Invite de Commandes.html">Créer un Commit</a></li>
+                    <li><a href="Différence entre CMD et Bash.html">Différence entre CMD et Bash</a></li>
+                    <li><a href="Résolution de Conflits Git.html">Résolution de conflits</a></li>
+                </ul>
+            </li>
+            <li><a href="À propos.html">À propos</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h1>Supprimer un Dépôt GitHub via l'Invite de Commandes</h1>
+		<ul>
+            <li><strong>Auteur : ACOMDIR </strong><a href="https://www.facebook.com/acomdir/" target="_blank">https://www.facebook.com/acomdir/</a>.</li>
+		</ul>
+        <p>Supprimer un dépôt GitHub est une opération qui doit être effectuée avec prudence, car elle entraîne la perte de toutes les données associées au dépôt.</p>
+
+        <h2>Étape 1 : Identifier le Dépôt à Supprimer</h2>
+        <p>Assurez-vous que vous travaillez dans le bon répertoire local lié au dépôt distant. Utilisez la commande suivante pour vérifier :</p>
+        <div class="code-block">git remote -v</div>
+        <p>Cela affichera les URL des dépôts distants associés.</p>
+
+        <h2>Étape 2 : Supprimer le Lien avec le Dépôt Distant</h2>
+        <p>Pour supprimer un dépôt distant de votre projet local, utilisez :</p>
+        <div class="code-block">git remote remove origin</div>
+        <p>Cela supprimera le lien entre votre projet local et le dépôt distant.</p>
+
+        <h2>Étape 3 : Supprimer un Dépôt GitHub depuis l'Interface Web</h2>
+        <p>La suppression complète d'un dépôt sur GitHub doit être effectuée via l'interface web. Suivez ces étapes :</p>
+        <ol>
+            <li>Connectez-vous à votre compte GitHub.</li>
+            <li>Accédez à la page du dépôt que vous souhaitez supprimer.</li>
+            <li>Cliquez sur l'onglet <strong>Settings</strong> (Paramètres).</li>
+            <li>Faites défiler jusqu'à la section <strong>Danger Zone</strong>.</li>
+            <li>Cliquez sur <strong>Delete this repository</strong>.</li>
+            <li>Confirmez la suppression en entrant le nom complet du dépôt.</li>
+        </ol>
+
+        <h2>Étape 4 : Supprimer un Répertoire Local</h2>
+        <p>Si vous souhaitez également supprimer les fichiers locaux associés à ce dépôt, utilisez les commandes suivantes dans votre terminal :</p>
+        <div class="code-block">cd ..</div>
+        <p>Revenez au répertoire parent, puis :</p>
+        <div class="code-block">rm -rf nom_du_repertoire</div>
+        <p>Cette commande supprime complètement le répertoire et son contenu. Remplacez <code>nom_du_repertoire</code> par le nom du dossier de votre dépôt local.</p>
+
+        <h2>Précautions Importantes</h2>
+        <ul>
+            <li>Assurez-vous de sauvegarder les fichiers importants avant de supprimer un dépôt.</li>
+            <li>Double vérifiez le nom du dépôt avant de confirmer sa suppression sur GitHub.</li>
+            <li>La suppression est irréversible, soyez donc absolument sûr de votre décision.</li>
+        </ul>
+    </div>
+</body>
+</html>

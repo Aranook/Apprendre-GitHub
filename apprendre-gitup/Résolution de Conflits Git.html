@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résolution de Conflits Git</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav > ul > li {
+            display: inline-block;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 3px;
+        }
+        nav a.active {
+            background-color: #555;
+            color: white;
+            border-radius: 3px;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            border-radius: 3px;
+            padding: 5px 0;
+            z-index: 1000;
+        }
+        nav ul ul li {
+            display: block;
+        }
+        nav ul ul a {
+            padding: 8px 15px;
+            width: 200px;
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
+        .content {
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 5px solid #007BFF;
+            overflow-x: auto;
+        }
+        code {
+            color: #007BFF;
+        }
+        ul, ol {
+            margin: 10px 0 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html" class="active">Apprendre GitHub</a></li>
+            <li><a href="#">Catégories</a>
+                <ul>
+                    <li><a href="Créer un Nouveau Dépôt GitHub.html">Créer un Nouveau Dépôt</a></li>
+                    <li><a href="Supprimer un dépôt GitHub via l'Invite de Commandes.html">Supprimer un Dépôt</a></li>
+                    <li><a href="Procédure de synchronisation avec GitHub sous Windows.html">Synchronisation avec GitHub</a></li>
+                    <li><a href="Cloner un Dépôt GitHub vers local sous Windows.html">Cloner un Dépôt GitHub vers local</a></li>
+					<li><a href="Créer un commit via l'Invite de Commandes.html">Créer un Commit</a></li>
+                    <li><a href="Différence entre CMD et Bash.html">Différence entre CMD et Bash</a></li>
+                    <li><a href="Résolution de Conflits Git.html">Résolution de conflits</a></li>
+                </ul>
+            </li>
+            <li><a href="À propos.html">À propos</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h1>Résolution de Conflits Git</h1>
+        
+        <ul>
+            <li><strong>Auteur : ACOMDIR </strong><a href="https://www.facebook.com/acomdir/" target="_blank">https://www.facebook.com/acomdir/</a>.</li>
+        </ul>
+
+        <h2>Introduction aux Conflits Git</h2>
+        <p>Les conflits Git surviennent lorsque deux branches contiennent des modifications incompatibles dans le même fichier. Cela se produit fréquemment lors des opérations de <code>merge</code> ou de <code>rebase</code> où Git ne peut pas fusionner les changements automatiquement.</p>
+
+        <h2>Étape 1 : Identifier le Conflit</h2>
+        <p>Lorsqu'un conflit se produit, Git vous en informe par un message indiquant que le merge ou rebase a échoué. Vous pouvez utiliser la commande suivante pour voir les fichiers en conflit :</p>
+        <pre><code>git status</code></pre>
+        <p>Les fichiers conflictuels seront marqués comme <code>Unmerged paths</code>.</p>
+
+        <h2>Étape 2 : Résoudre le Conflit Manuellement</h2>
+        <p>Ouvrez les fichiers en conflit dans votre éditeur de texte. Git marque les conflits avec des sections comme :</p>
+        <pre><code>&lt;=&gt;
+        Conflit début
+        &lt;partie locale&gt;
+        =======
+        &lt;partie distante&gt;
+        &lt;fin du conflit&gt;
+        </code></pre>
+        <p>Vous devez choisir quelle version garder ou combiner les modifications de manière appropriée. Une fois que vous avez résolu le conflit, enregistrez les fichiers.</p>
+
+        <h2>Étape 3 : Ajouter les Modifications Résolues</h2>
+        <p>Une fois les conflits résolus, vous devez ajouter les fichiers modifiés à l'index de Git pour marquer les conflits comme résolus :</p>
+        <pre><code>git add nom_du_fichier</code></pre>
+
+        <h2>Étape 4 : Finaliser la Fusion ou Rebase</h2>
+        <p>Si vous êtes en train de fusionner (merge), finalisez avec :</p>
+        <pre><code>git commit</code></pre>
+        <p>Si vous êtes en train de faire un rebase, continuez avec :</p>
+        <pre><code>git rebase --continue</code></pre>
+
+        <h2>Étape 5 : Pousser les Modifications vers le Dépôt Distant</h2>
+        <p>Après avoir résolu le conflit et commis les changements, vous pouvez pousser vos modifications vers le dépôt distant :</p>
+        <pre><code>git push</code></pre>
+
+        <h2>Conseils Supplémentaires</h2>
+        <ul>
+            <li>Utilisez <code>git diff</code> pour voir les différences avant de résoudre un conflit.</li>
+            <li>Si vous souhaitez annuler un merge ou rebase en cours, utilisez <code>git merge --abort</code> ou <code>git rebase --abort</code>.</li>
+            <li>Il est possible d'utiliser des outils graphiques comme <strong>GitKraken</strong> ou <strong>Sourcetree</strong> pour faciliter la gestion des conflits.</li>
+        </ul>
+    </div>
+</body>
+</html>

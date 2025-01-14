@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue sur GitHub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav > ul > li {
+            display: inline-block;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 3px;
+        }
+        nav a.active {
+            background-color: #555;
+            color: white;
+            border-radius: 3px;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            border-radius: 3px;
+            padding: 5px 0;
+            z-index: 1000;
+        }
+        nav ul ul li {
+            display: block;
+        }
+        nav ul ul a {
+            padding: 8px 15px;
+            width: 200px;
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
+        .content {
+            padding: 20px;
+        }
+        .animation {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .folder, .file, .group, .network {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #333;
+            border-radius: 5px;
+            position: relative;
+            animation: bounce 2s infinite;
+        }
+        .folder {
+            background-color: #FFA500;
+            color: #fff;
+        }
+        .file {
+            background-color: #007BFF;
+            color: #fff;
+        }
+        .group {
+            background-color: #28A745;
+            color: #fff;
+            animation-delay: 0.5s;
+        }
+        .network {
+            background-color: #6F42C1;
+            color: #fff;
+            animation-delay: 1s;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html" class="active">Apprendre GitHub</a></li>
+            <li><a href="#">Catégories</a>
+                <ul>
+					<li><a href="Créer un nouveau dépôt GitHub.html">Créer un Nouveau Dépôt</a></li>
+					<li><a href="Supprimer un dépôt GitHub via l'Invite de Commandes.html">Supprimer un Dépôt</a></li>
+                    <li><a href="Procédure de synchronisation avec GitHub sous Windows.html">Synchronisation avec GitHub</a></li>
+					<li><a href="Cloner un Dépôt GitHub vers local sous Windows.html">Cloner un Dépôt GitHub vers local</a></li><li><a href="Procédure de synchronisation avec GitHub sous Windows.html">Synchronisation avec GitHub</a></li>
+					<li><a href="Créer un commit via l'Invite de Commandes.html">Créer un Commit</a></li>
+                    <li><a href="Différence entre CMD et Bash.html">Différence entre CMD et Bash</a></li>
+                    <li><a href="Résolution de Conflits Git.html">Résolution de conflits</a></li>
+                </ul>
+            </li>
+            <li><a href="À propos.html">À propos</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h1>Bienvenue sur Apprendre GitHub</h1>
+		<ul>
+            <li><strong>Auteur : ACOMDIR </strong><a href="https://www.facebook.com/acomdir/" target="_blank">https://www.facebook.com/acomdir/</a>.</li>
+		</ul>
+        <p>GitHub est une plateforme qui facilite le travail collaboratif et la gestion de versions des projets.</p>
+        <p>Utilisez le menu ci-dessus pour accéder à des tutoriels et des exemples pratiques.</p>
+
+        <h2>Illustration des Concepts Git</h2>
+        <div class="animation">
+            <div class="folder">Dossier</div>
+            <div class="file">Fichier</div>
+            <div class="group">Équipe</div>
+            <div class="network">Réseau</div>
+        </div>
+        <p>Les dossiers et fichiers dans Git représentent les projets et leurs composants, avec un historique de modifications sauvegardé pour chaque élément. Les équipes et les réseaux illustrent la collaboration et la connexion entre développeurs sur des projets partagés.</p>
+    </div>
+</body>
+</html>
