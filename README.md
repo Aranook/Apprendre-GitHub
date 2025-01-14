@@ -3,7 +3,7 @@ Ce dépôt fournit une base solide en lecture par un navigateur internet pour co
 
 Auteur : ACOMDIR href="https://www.facebook.com/acomdir/"
 
-Description du Dépôt '(Branche Master)
+Description du Dépôt '(Voir Branche Master pour la version à télécharger)
 
 Télécharger le dépôt https://github.com/Aranook/Apprendre-GitHub.git pour visualiser la formation de base de ce module gitup codé en html simple. Puis cliquez sur index.html pour commencer votre apprentissage sur gitup. Vous pouvez l'utiliser avec simplement votre navigateur.
 
