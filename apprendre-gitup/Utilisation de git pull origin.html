@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilisation de git pull origin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav > ul > li {
+            display: inline-block;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 3px;
+        }
+        nav a.active {
+            background-color: #555;
+            color: white;
+            border-radius: 3px;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            border-radius: 3px;
+            padding: 5px 0;
+            z-index: 1000;
+        }
+        nav ul ul li {
+            display: block;
+        }
+        nav ul ul a {
+            padding: 8px 15px;
+            width: 200px;
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
+        .content {
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 5px solid #007BFF;
+            overflow-x: auto;
+        }
+        code {
+            color: #007BFF;
+        }
+        ul, ol {
+            margin: 10px 0 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html" class="active">Apprendre GitHub</a></li>
+            <li><a href="#">Catégories</a>
+                <ul>
+                    <li><a href="Créer un nouveau dépôt GitHub.html">Créer un Nouveau Dépôt</a></li>
+                    <li><a href="Supprimer un dépôt GitHub via l'Invite de Commandes.html">Supprimer un Dépôt</a></li>
+                    <li><a href="Procédure de synchronisation avec GitHub sous Windows.html">Synchronisation avec GitHub</a></li>
+                    <li><a href="Cloner un Dépôt GitHub vers local sous Windows.html">Cloner un Dépôt GitHub vers local</a></li>
+                    <li><a href="Utilisation de git pull origin.html">Utilisation de git pull origin</a></li>
+					<li><a href="Créer un commit via l'Invite de Commandes.html">Créer un Commit</a></li>
+                    <li><a href="Différence entre CMD et Bash.html">Différence entre CMD et Bash</a></li>
+                    <li><a href="Résolution de Conflits Git.html">Résolution de conflits</a></li>
+                </ul>
+            </li>
+            <li><a href="À propos.html">À propos</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h1>Utilisation de <code>git pull origin master</code></h1>
+
+        <ul>
+            <li><strong>Auteur : ACOMDIR </strong><a href="https://www.facebook.com/acomdir/" target="_blank">https://www.facebook.com/acomdir/</a>.</li>
+        </ul>
+
+        <h2>Introduction à <code>git pull origin master</code></h2>
+        <p>La commande <code>git pull origin master</code> est utilisée pour récupérer les dernières modifications effectuées dans un dépôt GitHub distant et les intégrer à votre dépôt local. Cette commande est une combinaison de deux actions :</p>
+        <ul>
+            <li><strong>git fetch</strong> : Récupère les modifications depuis le dépôt distant sans les appliquer.</li>
+            <li><strong>git merge</strong> : Fusionne ces modifications dans votre branche locale (ici, <code>master</code>).</li>
+        </ul>
+
+        <h2>Étape 1 : Vérifier l'état de votre dépôt local</h2>
+        <p>Avant de récupérer les modifications, il est important de vérifier l'état de votre dépôt local pour voir si des modifications locales sont en cours. Utilisez la commande suivante :</p>
+        <pre><code>git status</code></pre>
+        <p>Cela vous indiquera si vous avez des fichiers non suivis, des modifications en attente de commit, ou si votre dépôt est à jour avec le dépôt distant.</p>
+
+        <h2>Étape 2 : Utiliser la commande <code>git pull origin master</code></h2>
+        <p>Une fois votre dépôt local dans un état stable, vous pouvez exécuter la commande suivante pour récupérer les dernières modifications depuis le dépôt distant GitHub et les fusionner dans votre branche <code>master</code> locale :</p>
+        <pre><code>git pull origin master</code></pre>
+
+        <h3>Explication de la commande :</h3>
+        <ul>
+            <li><strong>git pull</strong> : Récupère les modifications du dépôt distant et les applique localement.</li>
+            <li><strong>origin</strong> : Il s'agit du nom par défaut du dépôt distant. Si votre dépôt a un autre nom, remplacez-le par celui-ci.</li>
+            <li><strong>master</strong> : Il s'agit de la branche que vous souhaitez synchroniser. Si vous travaillez sur une autre branche, remplacez <code>master</code> par le nom de cette branche.</li>
+        </ul>
+
+        <h2>Étape 3 : Résoudre les conflits (si nécessaire)</h2>
+        <p>Si vous avez des modifications locales en conflit avec celles récupérées du dépôt distant, Git vous demandera de résoudre ces conflits. Vous devrez ouvrir les fichiers conflictuels et choisir quelles modifications conserver.</p>
+        <p>Après avoir résolu les conflits, ajoutez les fichiers modifiés au suivi Git et effectuez un commit pour enregistrer la résolution des conflits :</p>
+        <pre><code>git add nom_du_fichier</code></pre>
+        <pre><code>git commit -m "Résolution des conflits"</code></pre>
+
+        <h2>Étape 4 : Vérifier la synchronisation</h2>
+        <p>Une fois la commande <code>git pull origin master</code> exécutée avec succès, vous pouvez vérifier que votre branche locale est bien à jour avec le dépôt distant. Utilisez la commande suivante pour voir si tout est synchronisé :</p>
+        <pre><code>git log</code></pre>
+        <p>Cette commande affiche l'historique des commits et vous permettra de vérifier que les dernières modifications ont bien été récupérées et fusionnées.</p>
+
+        <h2>Conseils Supplémentaires</h2>
+        <ul>
+            <li>Si vous travaillez sur plusieurs branches, assurez-vous de vous placer sur la bonne branche avant d'exécuter <code>git pull</code> :</li>
+            <pre><code>git checkout nom_de_branche</code></pre>
+            <li>Pour récupérer les dernières modifications sans les fusionner, vous pouvez utiliser <code>git fetch</code> à la place de <code>git pull</code>.</li>
+            <li>Si vous avez des problèmes fréquents de conflits, envisagez d'utiliser <code>git rebase</code> à la place de <code>git merge</code> pour une gestion plus fluide des mises à jour.</li>
+        </ul>
+    </div>
+</body>
+</html>
