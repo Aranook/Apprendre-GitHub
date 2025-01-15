@@ -1,0 +1,20 @@
+Apprendre-GitHub/
+├── static/
+│   ├── css/
+│   │   └── stylestatic.css          
+│   └── js/
+│       └── scriptstatic.js
+│   
+├── templates/
+│   ├── index.html
+│   ├── header.html
+│   ├── nav.html
+│   ├── content.html
+│   ├── footer.html
+│   └── README.md
+│
+├── pages/
+│   ├── a-propos.html
+│   └── README.md
+│
+└── README.md
