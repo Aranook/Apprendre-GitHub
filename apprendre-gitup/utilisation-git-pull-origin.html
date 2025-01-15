@@ -112,6 +112,9 @@
         <ul>
             <li><strong>Auteur : ACOMDIR </strong><a href="https://www.facebook.com/acomdir/" target="_blank">https://www.facebook.com/acomdir/</a>.</li>
         </ul>
+		
+		<p>Attention : GitHub propose deux branches (répertoires dépôts) : main ou master. Nos exemples sont construites sur la branche master.</p>
+		<p>La commande <code>git branch</code> vous permet de lister toutes les branches disponibles et met en évidence la branche active avec un astérisque (*) de votre compte GitHub.</p>
 
         <h2>Introduction à <code>git pull origin master</code></h2>
         <p>La commande <code>git pull origin master</code> est utilisée pour récupérer les dernières modifications effectuées dans un dépôt GitHub distant et les intégrer à votre dépôt local. Cette commande est une combinaison de deux actions :</p>
@@ -128,6 +131,10 @@
         <h2>Étape 2 : Utiliser la commande <code>git pull origin master</code></h2>
         <p>Une fois votre dépôt local dans un état stable, vous pouvez exécuter la commande suivante pour récupérer les dernières modifications depuis le dépôt distant GitHub et les fusionner dans votre branche <code>master</code> locale :</p>
         <pre><code>git pull origin master</code></pre>
+		<h2>Utiliser la commande <code>git pull origin master --force</code></h2>
+		<p>Si vous ne voulez pas intégrer les modifications distantes</p>
+		<p>Si vous êtes certain que vos changements locaux doivent écraser ceux du dépôt distant (par exemple, si vous savez que les changements distants ne sont pas pertinents), vous pouvez forcer le push. Attention, cela peut entraîner une perte de données sur le dépôt distant !</p>
+		<pre><code>git pull origin master --force</code></pre>
 
         <h3>Explication de la commande :</h3>
         <ul>
