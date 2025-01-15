@@ -6,7 +6,7 @@ https://github.com/Aranook/Apprendre-GitHub/tree/master
 
 Mode d'emploi :
 
-Une fois le dépôt téléchargé sur votre pc, allez dans le dossier Apprendre-GitHub et cliquez sur index.html pour parcourir les catégorie.
+Une fois le dépôt téléchargé sur votre pc, allez dans le dossier Apprendre-GitHub et cliquez sur index.html pour parcourir les catégories.
 
 Description du Dépôt
 
