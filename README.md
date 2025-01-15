@@ -4,7 +4,8 @@ Télécharger le dépôt complet sur la branche master
 
 https://github.com/Aranook/Apprendre-GitHub/tree/master
 
-Mode d'emploi
+Mode d'emploi :
+
 Une fois le dépôt téléchargé sur votre pc, allez dans le dossier Apprendre-GitHub et cliquez sur index.html pour parcourir les catégorie.
 
 Description du Dépôt
