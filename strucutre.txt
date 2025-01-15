@@ -1,3 +1,6 @@
+La strucutre futur de ce projet sera celle ci-dessous. Pour le moment nous fournissons un projet avec une structure différente.
+Parceque ce projet est en html et css uniquement.
+
 Apprendre-GitHub/
 ├── static/
 │   ├── css/
